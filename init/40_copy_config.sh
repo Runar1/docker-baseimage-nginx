@@ -15,5 +15,5 @@ fi
 if [[ $(find /config/www -type f | wc -l) -eq 0 ]]; then
 cp /defaults/index.html /config/www/index.html
 fi
-cp /config/nginx/nginx-fpm.conf /etc/php5/fpm/pool.d/www.conf
+cp /config/nginx/nginx-fpm.conf /etc/php/5.6/fpm/pool.d/www.conf
 chown -R abc:abc /config

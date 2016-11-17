@@ -1,6 +1,8 @@
 FROM linuxserver/baseimage
 MAINTAINER smdion <me@seandion.com>, Sparklyballs <sparklyballs@linuxserver.io>, Stian Larsen <lonix@linuxserver.io>, Kode <kodestar@linuxserver.io>
-ENV BASE_APTLIST="nginx openssl php5-fpm php5 php5-cli"
+RUN apt-get install -y language-pack-en-base
+RUN LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php
+ENV BASE_APTLIST="nginx openssl php5.6-fpm php5.6 php5.6-cli"
 RUN apt-get update && \
 apt-get install $BASE_APTLIST -qy && \
 apt-get clean -y && rm -rf /var/lib/apt/lists/*
